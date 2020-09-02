@@ -8,13 +8,16 @@ request.onreadystatechange = function () {
     items.forEach((item) =>{
         let article = document.createElement("article");
         article.className = "card"      
-        let h2 = document.createElement("h2"); 
+        let h3 = document.createElement("h3"); 
         let p = document.createElement("p")
         articleContainer.appendChild(article);
-        article.appendChild(h2);
+        article.appendChild(h3);
         article.appendChild(p);
         p.innerText = item.contenu
-        h2.innerText = item.titre
+        h3.innerText = item.titre
+        h3.style.backgroundColor = "red"
+        h3.classList = "text-center"
+
         
 
         
