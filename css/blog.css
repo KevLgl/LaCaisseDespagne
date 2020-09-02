@@ -1,0 +1,12 @@
+.card{
+    height: 40vh;
+    width:45%;
+    padding: 2em;
+    margin: 2em;
+}
+#article-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
