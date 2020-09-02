@@ -1,0 +1,18 @@
+{"items": [
+    {
+      "durée": "15 ans",
+      "taux": 0.75
+    },
+    {
+      "durée": "20 ans",
+      "taux": 0.90
+    },
+    {
+      "durée": "25 ans",
+      "taux": 1.08
+    },
+    {
+      "durée": "30 ans",
+      "taux": 1.55
+    }
+  ]}
