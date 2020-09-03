@@ -6,17 +6,16 @@ request.onreadystatechange = function () {
   if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
     let items = JSON.parse(this.responseText)
     items.forEach((item) =>{
-        let article = document.createElement("article");
-        article.className = "card"      
-        let h3 = document.createElement("h3"); 
-        let p = document.createElement("p")
-        articleContainer.appendChild(article);
-        article.appendChild(h3);
-        article.appendChild(p);
-        p.innerText = item.contenu
-        h3.innerText = item.titre
-        h3.style.backgroundColor = "red"
-        h3.classList = "text-center"
+        let article = document.createElement("article");// creer un article
+        article.className = "card" // on met la classe card a l'article     
+        let h3 = document.createElement("h3"); // creer un h3  
+        let p = document.createElement("p") // creer un p 
+        articleContainer.appendChild(article);// article enfant de articleContainer
+        article.appendChild(h3); // h3 enfant de article    
+        article.appendChild(p); // p enfant de l'article
+        p.innerText = item.contenu// rempli p avec item.contenu(du json)
+        h3.innerText = item.titre// rempli h3 avec item.titre(du json)
+        h3.classList = "text-center bg-light"// donner des classes au h3
 
         
 
