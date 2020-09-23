@@ -55,7 +55,7 @@
 
             <div class="card col-3">
               <div class="card-body">
-                <h5 class="card-title">Livret C</h5>
+                <h5 class="card-title">Livret C </h5>
                 <p class="card-text">+5€</p>
                 <a href="#" class="card-link">Depot</a>
                 <a href="#" class="card-link">Retrait</a>
