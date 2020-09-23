@@ -12,34 +12,10 @@
     <title>Caisse D'espagne</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">LOGO</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Mes comptes </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="info.html">Les informations numériques</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog.html">Blog</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <?php include 'template/nav.php' ?>
+    <?php include 'template/header.php' ?>
 
-    <header>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">LE HEADER</h1>
-          <p class="lead">NOTRE SLOGAN</p>
-        </div>
-      </div>
-    </header>
+
 
     <main>
       <h2 class="text-center mb-5">VOS COMPTES</h2>
@@ -79,7 +55,7 @@
 
             <div class="card col-3">
               <div class="card-body">
-                <h5 class="card-title">Livret C</h5>
+                <h5 class="card-title">Livret C </h5>
                 <p class="card-text">+5€</p>
                 <a href="#" class="card-link">Depot</a>
                 <a href="#" class="card-link">Retrait</a>
@@ -141,14 +117,7 @@
         </div>
       </div> 
     </main>
-    <footer>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">LE FOOTER</h1>
-          <p class="lead">Conditions generales</p>
-        </div>
-      </div>
-    </footer>
+    <?php include 'template/footer.php' ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/main.js"></script>
