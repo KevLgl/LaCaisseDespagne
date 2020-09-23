@@ -12,34 +12,8 @@
     <title>Caisse D'espagne</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">LOGO</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Mes comptes </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="info.html">Les informations numériques</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog.html">Blog</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <header>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">LE HEADER</h1>
-          <p class="lead">NOTRE SLOGAN</p>
-        </div>
-      </div>
-    </header>
+    <?php include 'template/nav.php' ?>
+    <?php include 'template/header.php' ?>
 
     <main>
         <h2 class="text-center">Les articles</h2>
@@ -48,14 +22,7 @@
 
         </section>
     </main>
-    <footer>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">LE FOOTER</h1>
-          <p class="lead">Conditions generales</p>
-        </div>
-      </div>
-    </footer>
+    <?php include 'template/footer.php' ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/blog.js"></script>
