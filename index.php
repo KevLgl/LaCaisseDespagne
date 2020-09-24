@@ -30,7 +30,7 @@
                     <?php echo $value['name'] .  "<br>"; ?>
                   </h5>
                   <p class="card-text">
-                    <?php echo "N° compte: " . $value['number'] .  "<br>"; ?>
+                    <?php echo "N° compte: " . $value['number'] .  "<br>";  ?>
                   </p>
                   <p class="card-text">
                     <?php echo $value['owner'] .  "<br>"; ?>
