@@ -12,9 +12,10 @@
             
          
           <?php 
-          $accounts = get_accounts();
+          $accounts = get_accounts();// Create variable for use it on foreeach
           foreach ($accounts as $key => $value) {
           ?>
+          <!-- Create link for all acounts(on url for get them with GET method) -->
             <a href="acount.php?
             name=<?php echo $value['name']?>&
             number=<?php echo $value['number']?>&
@@ -23,7 +24,7 @@
             last_operation=<?php echo $value['last_operation']?>&
             " >
             
-
+          <!-- Create bootstrap card for all acounts -->
               <div class="card col-3">
                 <div class="card-body">
                   <h5 class="card-title">

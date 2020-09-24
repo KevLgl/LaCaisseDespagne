@@ -3,6 +3,7 @@
     <?php include 'template/header.php' ?>
     <h2 class="text-center">Ton compte</h2>
     <main>
+    <!-- Create container of acount informations -->
       <div id="info-container">
         <div class="jumbotron bg-danger">
             <h1 class="display-4"> <?php echo $_GET['name'] ?> </h1>
