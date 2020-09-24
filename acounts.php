@@ -22,6 +22,7 @@ function get_accounts() {
         "amount" => 480,
         "last_operation" => "depot +150€"
       ],
+
     ];
 }
 

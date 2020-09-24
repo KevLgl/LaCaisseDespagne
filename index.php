@@ -14,7 +14,7 @@
   <body>
     <?php include 'template/nav.php' ?>
     <?php include 'template/header.php' ?>
-
+    <?php require_once 'acounts.php'  ?>
 
 
     <main>
@@ -24,97 +24,36 @@
           <div class="row" id="cardContainer" >
             
          
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Livret A</h5>
-                  <p class="card-text">+18732€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
+          <?php 
+          $accounts = get_accounts();
+          foreach ($accounts as $key => $value) {
+          ?>
+            <div class="card col-3">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <?php echo $value['name'] .  "<br>"; ?>
+                </h5>
+                <p class="card-text">
+                  <?php echo "N° compte:" . $value['number'] .  "<br>"; ?>
+                </p>
+                <p class="card-text">
+                  <?php echo $value['owner'] .  "<br>"; ?>
+                </p>
+                <p class="card-text">
+                  <?php echo $value['amount'] .  "<br>"; ?>
+                </p>
+                <p class="card-text">
+                  <?php echo "derniere opération:" . $value['last_operation'] .  "<br>"; ?>
+                </p>
+                <a href="#" class="card-link">Depot</a>
+                <a href="#" class="card-link">Retrait</a>
+                <a href="#" class="card-link">Supprimer</a>
               </div>
-            
+            </div>    
+          <?php } ?> 
 
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Compte courant</h5>
-                  <p class="card-text">-122€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>
-
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Livret B </h5>
-                  <p class="card-text">+12€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>
-
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Livret C </h5>
-                  <p class="card-text">+5€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>
-
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Livret D</h5>
-                  <p class="card-text">-6754€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>
-
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Livret E</h5>
-                  <p class="card-text">0€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>
-
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Livret F</h5>
-                  <p class="card-text">+120€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                  
-                </div>
-              </div>
-
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">Livret G</h5>
-                  <p class="card-text">0€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>
-
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">livret H</h5>
-                  <p class="card-text">+12€</p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>
+               
+      
           </div>
         </div>
       </div> 
