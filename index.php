@@ -1,17 +1,4 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <title>Caisse D'espagne</title>
-  </head>
-  <body>
     <?php include 'template/nav.php' ?>
     <?php include 'template/header.php' ?>
     <?php require_once 'acounts.php'  ?>
@@ -28,28 +15,38 @@
           $accounts = get_accounts();
           foreach ($accounts as $key => $value) {
           ?>
-            <div class="card col-3">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <?php echo $value['name'] .  "<br>"; ?>
-                </h5>
-                <p class="card-text">
-                  <?php echo "N° compte:" . $value['number'] .  "<br>"; ?>
-                </p>
-                <p class="card-text">
-                  <?php echo $value['owner'] .  "<br>"; ?>
-                </p>
-                <p class="card-text">
-                  <?php echo $value['amount'] .  "<br>"; ?>
-                </p>
-                <p class="card-text">
-                  <?php echo "derniere opération:" . $value['last_operation'] .  "<br>"; ?>
-                </p>
-                <a href="#" class="card-link">Depot</a>
-                <a href="#" class="card-link">Retrait</a>
-                <a href="#" class="card-link">Supprimer</a>
-              </div>
-            </div>    
+            <a href="acount.php?
+            name=<?php echo $value['name']?>&
+            number=<?php echo $value['number']?>&
+            owner=<?php echo $value['owner']?>&
+            amount=<?php echo $value['amount']?>&
+            last_operation=<?php echo $value['last_operation']?>&
+            " >
+            
+
+              <div class="card col-3">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <?php echo $value['name'] .  "<br>"; ?>
+                  </h5>
+                  <p class="card-text">
+                    <?php echo "N° compte: " . $value['number'] .  "<br>"; ?>
+                  </p>
+                  <p class="card-text">
+                    <?php echo $value['owner'] .  "<br>"; ?>
+                  </p>
+                  <p class="card-text">
+                    <?php echo $value['amount'] . "€" . "<br>"; ?>
+                  </p>
+                  <p class="card-text">
+                    <?php echo "derniere opération: " . $value['last_operation'] .  "<br>"; ?>
+                  </p>
+                  <a href="#" class="card-link">Depot</a>
+                  <a href="#" class="card-link">Retrait</a>
+                  <a href="#" class="card-link">Supprimer</a>
+                </div>
+              </div>    
+            </a>
           <?php } ?> 
 
                
