@@ -4,58 +4,63 @@
     <?php require_once 'acounts.php'  ?>
 
 
-    <main>
-      <h2 class="text-center mb-5">VOS COMPTES</h2>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container-fluid">
-          <div class="row" id="cardContainer" >
-            
-         
-          <?php 
-          $accounts = get_accounts();// Create variable for use it on foreeach
-          foreach ($accounts as $key => $value) {
-          ?>
-          <!-- Create link for all acounts(on url for get them with GET method) -->
-            <a href="acount.php?
-            name=<?php echo $value['name']?>&
-            number=<?php echo $value['number']?>&
-            owner=<?php echo $value['owner']?>&
-            amount=<?php echo $value['amount']?>&
-            last_operation=<?php echo $value['last_operation']?>&
-            " >
-            
-          <!-- Create bootstrap card for all acounts -->
-              <div class="card col-3">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <?php echo $value['name'] .  "<br>"; ?>
-                  </h5>
-                  <p class="card-text">
-                    <?php echo "N° compte: " . $value['number'] .  "<br>";  ?>
-                  </p>
-                  <p class="card-text">
-                    <?php echo $value['owner'] .  "<br>"; ?>
-                  </p>
-                  <p class="card-text">
-                    <?php echo $value['amount'] . "€" . "<br>"; ?>
-                  </p>
-                  <p class="card-text">
-                    <?php echo "derniere opération: " . $value['last_operation'] .  "<br>"; ?>
-                  </p>
-                  <a href="#" class="card-link">Depot</a>
-                  <a href="#" class="card-link">Retrait</a>
-                  <a href="#" class="card-link">Supprimer</a>
-                </div>
-              </div>    
-            </a>
-          <?php } ?> 
+<main>
+  <h2 class="text-center mb-5">VOS COMPTES</h2>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
+      <div class="row" id="cardContainer" >
+        <?php 
+        $accounts = get_accounts();// Create variable for use it on foreeach
+        foreach ($accounts as $key => $value) {
+        ?>
+        <!-- Create link for all acounts(on url for get them with GET method) -->
+        <a href="acount.php?
+        name=<?php echo $value['name']?>&
+        number=<?php echo $value['number']?>&
+        owner=<?php echo $value['owner']?>&
+        amount=<?php echo $value['amount']?>&
+        last_operation=<?php echo $value['last_operation']?>&
+        " >
 
-               
-      
-          </div>
+        <!-- Create bootstrap card for all acounts -->
+        <div class="card col-3">
+        <div class="card-body">
+        <h5 class="card-title">
+        <?php echo $value['name'] .  "<br>"; ?>
+        </h5>
+        <p class="card-text">
+        <?php echo "N° compte: " . $value['number'] .  "<br>";  ?>
+        </p>
+        <p class="card-text">
+        <?php echo $value['owner'] .  "<br>"; ?>
+        </p>
+        <p class="card-text">
+        <?php echo $value['amount'] . "€" . "<br>"; ?>
+        </p>
+        <p class="card-text">
+        <?php echo "derniere opération: " . $value['last_operation'] .  "<br>"; ?>
+        </p>
+        <a href="#" class="card-link">Depot</a>
+        <a href="#" class="card-link">Retrait</a>
+        <a href="#" class="card-link">Supprimer</a>
         </div>
-      </div> 
-    </main>
+        </div>    
+        </a>
+        <?php } ?> 
+        <!-- Card " creat account " -->
+        <a href="new_account.php">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Creer un nouveau compte</h5>
+            <h6 class="card-subtitle mb-2 text-muted">+</h6>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div> 
+</main>
     <?php include 'template/footer.php' ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
