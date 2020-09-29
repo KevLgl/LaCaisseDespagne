@@ -29,6 +29,14 @@
             </div>
         </div>
         </form>
+
+        <?php 
+        echo $_POST["name"];
+        echo $_POST["somme"];
+        echo $_POST["type"];
+
+        
+        ?>
     </main>
     <?php include 'template/footer.php' ?>
     <!-- Optional JavaScript -->
