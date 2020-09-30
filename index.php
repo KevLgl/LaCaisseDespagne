@@ -1,7 +1,7 @@
 
-    <?php include 'template/nav.php' ?>
-    <?php include 'template/header.php' ?>
-    <?php require_once 'acounts.php'  ?>
+    <?php include 'template/nav.php';
+          include 'template/header.php';
+          require_once 'acounts.php'; ?>
 
 <main>
   <h2 class="text-center mb-5">VOS COMPTES</h2>

@@ -17,4 +17,10 @@ flex-wrap: wrap;
   height: auto;
   width: 100%; 
 }
-
+header{
+  height: 400px;
+  width: 100%;
+  background-image: url("../img/header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
