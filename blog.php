@@ -1,6 +1,6 @@
 
-    <?php include 'template/nav.php' ?>
-    <?php include 'template/header.php' ?>
+    <?php include 'template/nav.php' ;
+          include 'template/header.php'; ?>
 
     <main>
         <h2 class="text-center">Les articles</h2>

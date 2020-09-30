@@ -1,9 +1,8 @@
 
-    <?php include "template/nav.php"?>
-    <?php include 'template/header.php' ?>
-    <?php 
-    
-    require_once 'acounts.php';
+    <?php include 'template/nav.php';
+          include 'template/header.php';
+          require_once 'acounts.php';
+          
     if(isset($_GET["id"])){
       $id = htmlspecialchars($_GET["id"]);
       $account = get_accounts()[$id];
