@@ -24,19 +24,32 @@
         </div>
         
         <div class="form-group row">
-            <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Creer</button>
+            <div class="w-25 mx-auto">
+                <input name="new_account" type="submit" class="form-control" value="créer">
             </div>
         </div>
         </form>
 
-        <?php 
-        echo $_POST["name"];
-        echo $_POST["somme"];
-        echo $_POST["type"];
-
+        <?php if(!empty($_POST) && isset($_POST["new_account"])): ?>
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $_POST["name"]; ?></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST["somme"];?></h6>
+                <p class="card-text"><?php echo $_POST["type"]; ?> </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+            </div>
+        <?php else: ?>
+            <div class="alert alert-warning">Merci de remplir le formulaire pour creer un compte</div>
+        <?php endif; ?>
+        <?php var_dump($_POST); ?>
         
-        ?>
+
+       
+           
+           
+            
     </main>
     <?php include 'template/footer.php' ?>
     <!-- Optional JavaScript -->

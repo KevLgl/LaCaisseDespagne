@@ -1,17 +1,27 @@
 
     <?php include "template/nav.php"?>
     <?php include 'template/header.php' ?>
+    <?php 
+    
+    require_once 'acounts.php';
+    if(isset($_GET["id"])){
+      $id = htmlspecialchars($_GET["id"]);
+      $account = get_accounts()[$id];
+    }
+    
+    ?>
+
     <h2 class="text-center">Ton compte</h2>
     <main>
     <!-- Create container of acount informations -->
       <div id="info-container">
         <div class="jumbotron bg-danger">
-            <h1 class="display-4"> <?php echo $_GET['name'] ?> </h1>
-            <p class="lead">Numéro de compte: <?php echo $_GET['number'] ?></p>
-            <p>Propriétaire: <?php echo $_GET['owner'] ?></p>
+            <h1 class="display-4"> <?php echo $account['name'] ?> </h1>
+            <p class="lead">Numéro de compte: <?php echo $account['number'] ?></p>
+            <p>Propriétaire: <?php echo $account['owner'] ?></p>
             <hr class="my-4">
-            <p><?php echo $_GET['amount'] ?> </p>
-            <p>Derniere opération: <?php echo $_GET['last_operation'] ?> </p>
+            <p><?php echo $account['amount'] ?> </p>
+            <p>Derniere opération: <?php $account['last_operation'] ?> </p>
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         </div>
       </div>
