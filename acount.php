@@ -14,7 +14,7 @@
     <main>
     <!-- Create container of acount informations -->
       <div id="info-container">
-        <div class="jumbotron bg-danger">
+        <div class="jumbotron bg-danger ml-4 mr-4 text-center">
             <h1 class="display-4"> <?php echo $account['name'] ?> </h1>
             <p class="lead">Numéro de compte: <?php echo $account['number'] ?></p>
             <p>Propriétaire: <?php echo $account['owner'] ?></p>
