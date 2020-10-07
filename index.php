@@ -1,7 +1,13 @@
-
-    <?php include 'template/nav.php';
-          include 'template/header.php';
-          require_once 'acounts.php'; ?>
+<?php 
+session_start();
+// If $_SESSION[user] not exist or $_SESSION[user] is empty, -> login.php
+if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
+  header("Location: login.php");
+}
+?>
+ <?php include 'template/nav.php';
+        include 'template/header.php';
+        require_once 'acounts.php'; ?> 
 
 <main>
   <h2 class="text-center mb-5">VOS COMPTES</h2>
@@ -51,5 +57,7 @@
     </div>
   </div> 
 </main>
-    <?php include 'template/footer.php' ?>
+     <?php include 'template/footer.php' ?> 
+
+
  
