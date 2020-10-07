@@ -1,6 +1,6 @@
+<link rel="stylesheet" href="css/login.css">
 <?php include 'template/nav.php';
-        include 'template/header.php'; ?> 
-
+      include 'template/header.php'; ?> 
 <?php 
 //if a login form is submited
 if(!empty($_POST) && isset($_POST["login"])) {
@@ -38,12 +38,12 @@ if(!empty($_POST) && isset($_POST["login"])) {
 //VERIFIER SI EMAIL/PASSEWORD EST VIDE(VOIR FILTRE NETOYAGE PHP)
 ?>
 
-<h1>Accedez à votre espace personnel </h1>
+<h1 class="text-center mb-5">Accedez à votre espace personnel </h1>
 
 
 
 <div class="form-container">
-    <form action="" method="post">
+    <form id="form" action="" method="post">
         <div class="form-group">
             <label for="InputEmail1">Email</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
