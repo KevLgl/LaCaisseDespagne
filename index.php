@@ -10,8 +10,11 @@ require "model/entity/user.php";
 require "model/entity/account.php";
 require "model/accountManager.php";
 
+//Create $accountManeger for have acces to ->getAccounts
 $accountManager = new AccountManager();
+//Save the result of getAccounts in $accounts
 $accounts = $accountManager->getAccounts();
+
 
 require "view/indexView.php";
 

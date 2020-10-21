@@ -21,7 +21,7 @@ class Account {
         return $this->amount;
     }
 
-    public function setOpening_date(int $opening_date){
+    public function setOpening_date(string $opening_date){
         $this->opening_date = $opening_date;
     }
     public function getOpening_date(){
