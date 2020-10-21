@@ -1,14 +1,37 @@
 
     <?php include 'template/nav.php';
           include 'template/header.php';
-          require_once 'acounts.php';
-          
+     // Si id est passé dans l'url    
     if(isset($_GET["id"])){
       $id = htmlspecialchars($_GET["id"]);
-      $account = get_accounts()[$id];
     }
-    
-    ?>
+      // connexion bdd
+      $pdo = new PDO('mysql:host=localhost;dbname=banque_php', 'BanquePHP', 'banque76');
+      $query = $pdo->prepare(
+      'SELECT a.id AS a_id , a.amount AS a_amount, a.account_type, o.id AS o_id, o.operation_type, o.amount AS o_amount, o.label, o.account_id
+      FROM Account AS a
+      INNER JOIN Operation AS o
+      ON a.id = o.account_id
+      AND o.account_id = :id
+      ');
+
+      $query->execute([
+      "id" => $id
+      ]);
+      
+      if($query === false){
+        var_dump($pdo->errorInfo());
+        die('erreur SQL');
+      }
+      $accounts_details = $query->fetchAll(PDO::FETCH_ASSOC);
+      
+      
+      var_dump($accounts_details);  
+
+      
+?> 
+
+  
 
     <h2 class="text-center">Ton compte</h2>
     <main>
