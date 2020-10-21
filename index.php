@@ -1,63 +1,67 @@
-<?php 
-session_start();
-// If $_SESSION[user] not exist or $_SESSION[user] is empty, -> login.php
-if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
-  header("Location: login.php");
+
+ <?php
+ 
+include 'template/nav.php';
+include 'template/header.php';
+require_once 'acounts.php'; 
+ 
+
+$pdo = new PDO('mysql:host=localhost;dbname=banque_php', 'BanquePHP', 'banque76');
+$query = $pdo->prepare(
+'SELECT a.id , a.amount, a.account_type
+FROM Account AS a
+WHERE a.user_id = :id
+');
+$query->execute([
+  "id" => $_SESSION['user']['id']
+]);
+
+if($query === false){
+  var_dump($pdo->errorInfo());
+  die('erreur SQL');
 }
-?>
- <?php include 'template/nav.php';
-        include 'template/header.php';
-        require_once 'acounts.php'; ?> 
+$accounts = $query->fetchAll(PDO::FETCH_ASSOC);        
+?> 
 
 <main>
   <h2 class="text-center mb-5">VOS COMPTES</h2>
   <div class="jumbotron jumbotron-fluid">
     <div class="container-fluid">
       <div class="row" id="cardContainer">
+
         <?php 
-        $accounts = get_accounts();// Create variable for use it on foreeach
         foreach ($accounts as $key => $account) {
         ?>
-        <!-- Create link for all acounts(on url for get them with GET method) -->
-        <a href="acount.php?id=<?php echo $key; ?>">
+          
+          <a href="acount.php?id=<?php echo $account["id"]; ?>">
 
-        <!-- Create bootstrap card for all acounts -->
-          <div class="card col-3">
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $account['name'] .  "<br>"; ?></h5>
-              <p class="card-text"><?php echo "N° compte: " . $account['number'] .  "<br>";  ?></p>
-              <p class="card-text">
-              <?php echo $account['owner'] .  "<br>"; ?>
-              </p>
-              <p class="card-text">
-              <?php echo $account['amount'] . "€" . "<br>"; ?>
-              </p>
-              <p class="card-text">
-              <?php echo "derniere opération: " . $account['last_operation'] .  "<br>"; ?>
-              </p>
-              <a href="#" class="card-link">Depot</a>
-              <a href="#" class="card-link">Retrait</a>
-              <a href="#" class="card-link">Supprimer</a>
-            </div>
-          </div>   
-          </a> 
-        
-        <?php } ?> 
-        <!-- Card " creat account " -->
-        <a href="new_account.php">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-            <h5 class="card-title">Creer un nouveau compte</h5>
-            <h6 class="card-subtitle mb-2 text-muted">+</h6>
-            </div>
-          </div>
-        </a>
+          <!-- Create bootstrap card for all acounts -->
+            <div class="card col-3">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $account['account_type'] ?></h5>
+                <p class="card-text"><?php echo "N° compte: " . $account['id'] .  "<br>";  ?></p>
+                <p class="card-text">
+                <?php echo $_SESSION['user']['firstname'] ." ".  $_SESSION['user']['lastname']. "<br>"; ?>
+                </p>
+                <p class="card-text">
+                <?php echo $account['amount'] . "€" . "<br>"; ?>
+                </p>
+                <p class="card-text">
+                  <p>Last operation</p>
+                </p>
+                <a href="#" class="card-link">Depot</a>
+                <a href="#" class="card-link">Retrait</a>
+                <a href="#" class="card-link">Supprimer</a>
+              </div>
+            </div>   
+            </a> 
+       <?php } ?>
+    
+  
 
-      </div>
-    </div>
-  </div> 
 </main>
-     <?php include 'template/footer.php' ?> 
+<?php include 'template/footer.php' ?> 
+     
 
 
  

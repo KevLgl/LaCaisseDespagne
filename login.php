@@ -1,6 +1,20 @@
-<link rel="stylesheet" href="css/login.css">
-<?php include 'template/nav.php';
-      include 'template/header.php'; ?> 
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Caisse D'espagne</title>
+  </head>
+  <body>
+
+<?php include 'template/header.php'; ?> 
 <?php 
 //if a login form is submited
 if(!empty($_POST) && isset($_POST["login"])) {
@@ -30,9 +44,6 @@ if(!empty($_POST) && isset($_POST["login"])) {
             $_SESSION["user"] = $user;
             header("location: index.php");
         }
-        else{
-
-        }
     }
 }
 //VERIFIER SI EMAIL/PASSEWORD EST VIDE(VOIR FILTRE NETOYAGE PHP)
@@ -57,5 +68,6 @@ if(!empty($_POST) && isset($_POST["login"])) {
         </div>
     </form>
 </div>
+
 
 <?php include 'template/footer.php' ?> 

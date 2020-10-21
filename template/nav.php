@@ -1,4 +1,13 @@
 
+<?php 
+session_start();
+ // If $_SESSION[user] not exist or $_SESSION[user] is empty, -> login.php
+ if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
+   header("Location: login.php");
+
+
+ }
+?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -32,6 +41,9 @@
       </li>
       <li class="nav-item">
       <a class="nav-link" href="blog.php">Blog</a>
+      </li>
+      <li class="nav-item btn btn-outline-danger">
+      <a class="nav-link" href="logout.php">Se deconnecter</a>
       </li>
     </ul>
   </div>

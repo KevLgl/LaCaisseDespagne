@@ -1,5 +1,4 @@
-
-    <?php include 'template/nav.php';
+     <?php include 'template/nav.php';
           include 'template/header.php'; ?>
     <h2 class="text-center">Creer ton nouveau compte:</h2>
     <main>
