@@ -13,7 +13,7 @@ include 'template/header.php';
         foreach ($accounts as $key => $account) {
         ?>
           
-          <a href="acount.php?id=<?php echo $account->getId(); ?>">
+          <a href="single.php?id=<?php echo $account->getId(); ?>">
 
           <!-- Create bootstrap card for all acounts -->
             <div class="card col-3">
