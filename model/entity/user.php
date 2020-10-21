@@ -1,6 +1,7 @@
 <?php 
 class User{
-    
+    const SEXELIST = ["F","M"];
+
     protected $id;
     protected $lastname;
     protected $firstname;
@@ -8,7 +9,7 @@ class User{
     protected $city;
     protected $city_code;
     protected $adress;
-    protected static $sexe = ["F","M"];
+    protected $sexe;
     protected $password;
     protected $birth_date;
 
@@ -56,7 +57,7 @@ class User{
         return $this->adress;
     }
     public function setSexe(string $sexe){
-        if(in_array($sexe, [])){
+        if(in_array($sexe, self::SEXELIST)){
             $this->sexe = $sexe;
         }
     }
