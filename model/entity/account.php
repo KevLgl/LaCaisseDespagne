@@ -3,7 +3,7 @@ class Account {
     protected $id;
     protected $amout;
     protected $opening_date;
-    protected static $account_type;
+    protected $account_type;
     protected $user_id;
 
 

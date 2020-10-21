@@ -1,5 +1,11 @@
-     <?php include 'template/nav.php';
-          include 'template/header.php'; ?>
+     <?php 
+      session_start();
+       // If $_SESSION[user] not exist or $_SESSION[user] is empty, -> login.php
+        if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
+            header("Location: login.php");
+        }
+        include 'template/nav.php';
+        include 'template/header.php'; ?>
     <h2 class="text-center">Creer ton nouveau compte:</h2>
     <main>
     <form class="w-75 text-center" method="post" action="">

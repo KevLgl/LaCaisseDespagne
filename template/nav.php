@@ -1,13 +1,3 @@
-
-<?php 
-session_start();
- // If $_SESSION[user] not exist or $_SESSION[user] is empty, -> login.php
- if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
-   header("Location: login.php");
-
-
- }
-?>
 <!doctype html>
 <html lang="fr">
   <head>

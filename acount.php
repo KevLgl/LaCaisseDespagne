@@ -1,6 +1,13 @@
 
-    <?php include 'template/nav.php';
-          include 'template/header.php';
+    <?php 
+    session_start();
+     // If $_SESSION[user] not exist or $_SESSION[user] is empty, -> login.php
+    if(!isset($_SESSION["user"]) || empty($_SESSION["user"])){
+      header("Location: login.php");
+    }
+    include 'template/nav.php';
+    include 'template/header.php';
+        
      // Si id est passé dans l'url    
     if(isset($_GET["id"])){
       $id = htmlspecialchars($_GET["id"]);
